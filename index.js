@@ -10,7 +10,7 @@ requirejs.config({
 })
 
 /**
- * co function
+ * define the co function
  */
 var co;
 
