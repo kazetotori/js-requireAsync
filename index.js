@@ -9,8 +9,9 @@ requirejs.config({
     }
 })
 
+
 /**
- * define the co function
+ * define the function co
  */
 var co;
 
@@ -20,12 +21,17 @@ var co;
  */
 requirejs(['bluebird', 'jquery'], function (bluebird, $) {
     Promise = bluebird.Promise;
-    co = bluebird.coroutine;
+    co = function (gen) {
+        var ctx = this;
+        var args = slice(arguments, 1);
+        return (bluebird.coroutine(gen).apply(ctx, args));
+    }
 
-    new Promise(function (resolve, reject) {
-        $(function () { resolve() });
-    }).then(function () {
-        co(main);
+    co(function* () {
+        let args = yield new Promise(function (resolve, reject) {
+            $(function () { resolve(slice(arguments, 0)) });
+        })
+        return co(main, args);
     })
 })
 
