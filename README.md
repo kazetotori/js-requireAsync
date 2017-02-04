@@ -6,6 +6,7 @@
 #How to start
 -index.html  
 {% highlight html linenos %}
+~~~html
 <html>
     <head>
         <meta charset="UTF-8">
@@ -14,7 +15,7 @@
     <body>
     </body>
 </html>
-{% endhighlight %}
+~~~
 -Then you can write your code in the main function that contained in the index.js.  
 -然后你就可以在index.js文件中的main函数中写代码了  
 
