@@ -5,7 +5,6 @@
 
 #How to start
 -index.html  
-{% highlight html linenos %}
 ~~~html
 <html>
     <head>
@@ -29,9 +28,9 @@
 -在加载前，你需要在requirejs.config中添加这些路径  
 -这个函数返回一个Promise<Array>对象，该对象在requirejs正确加载时resolve一个包含所有要求加载的模块的数组  
 
-{% highlight javascript linenos %}
+~~~javascript
 function* main(){
     let [$,bluebird] = yield requireAsync('jquery','bluebird');
     let [bootstrap] = yield requireAsync('bootstrap');
 }
-{% endhighlight %}
+~~~
