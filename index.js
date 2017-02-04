@@ -73,6 +73,6 @@ function requireAsync() {
 /**
  * the main function of the application
  */
-function* main() {
-
+function* main(args) {
+    
 }
