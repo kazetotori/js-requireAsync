@@ -1,5 +1,5 @@
 #js-requireAsync
--This project support a standard main function that used in the browser environmont.
+-This project support a standard main function that used in the browser environmont.  
 -该项目提供一个使用在浏览器中标准的main函数
 
 
