@@ -4,7 +4,6 @@
 requirejs.config({
     baseUrl: 'node_modules',
     paths: {
-        jquery: 'jquery/dist/jquery',
         bluebird: 'bluebird/js/browser/bluebird'
     }
 })
@@ -19,7 +18,7 @@ var co;
 /**
  * Load main function.
  */
-requirejs(['bluebird', 'jquery'], function (bluebird, $) {
+requirejs(['bluebird'], function (bluebird) {
     Promise = bluebird.Promise;
     co = function (gen) {
         var ctx = this;
@@ -29,7 +28,7 @@ requirejs(['bluebird', 'jquery'], function (bluebird, $) {
 
     co(function* () {
         let args = yield new Promise(function (resolve, reject) {
-            $(function () { resolve(slice(arguments, 0)) });
+            window.addEventListener('DOMContentLoaded', function () { resolve(slice(arguments, 0)) });
         })
         return co(main, args);
     })
@@ -74,5 +73,5 @@ function requireAsync() {
  * the main function of the application
  */
 function* main(args) {
-    
+
 }
